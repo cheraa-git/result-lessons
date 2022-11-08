@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap");
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 0;
+
+}
+
+p {
+    font-weight: 300;
+    margin: 0;
+}
+
+h1, h2 {
+    text-align: center;
+    font-weight: 100;
+    margin: 10px;
+}
+
+a {
+    display: block;
+    font-weight: 300;
+    color: #5fa2ff;
+    text-decoration: none;
+}
+
+.blocks {
+    max-width: 800px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.blocks > div {
+    border: 1px solid #5fa2ff;
+    background: #fff;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    padding: 15px;
+
+}
+
+.head-title {
+    position: absolute;
+    left: 20px;
+    top: 30px;
+    transform: rotate(.5turn);
+    writing-mode: vertical-lr;
+}
+
+.info {
+    display: flex;
+    background: #fff;
+    margin-bottom: 40px;
+    width: 100vw;
+
+    justify-content: center;
+    padding: 10px 0;
+    border-bottom: 3px solid #5fa2ff;
+}
+
+.info-body {
+    display: flex;
+    width: 800px;
+    max-width: 80%;
+}
+
+.info-body > div {
+    margin: auto 0;
+    align-content: center;
+    max-width: 80%;
+    padding-right: 20px;
+}
+
+.info-title {
+    font-size: 18px;
+    margin: 0 0 5px 0;
+    color: #86898f;
+}
+
+.info-content {
+    margin: 0 0 10px 0;
+    font-weight: 300;
+    font-size: 14px;
+    color: #86898f
+}
+
+.info img {
+    width: 300px;
+    height: 300px;
+    margin: 20px 30px;
+    border-radius: 10px;
+}
+
+
+.tasks li {
+    font-weight: 300;
+    padding: 0 10px 10px;
+}
+
+.training-time > div {
+    display: flex;
+    justify-content: space-between;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.training-time p:nth-child(2) {
+    color: #86898f;
+    margin-bottom: .5rem;
+}
+
+
+.education > div {
+    justify-content: space-evenly;
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+    padding-bottom: .5rem;
+}
+
+.education-head p {
+    font-weight: 500;
+    color: #86898f;
+    margin: 10px 0 0;
+}
+
+.education-content a, .education-content p {
+    margin-bottom: .5rem;
+}
+
+
+.education hr {
+    max-width: 600px;
+}
+
+
+.contact-items {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.contact-items img {
+    width: 60px;
+}
+
+
+
+
