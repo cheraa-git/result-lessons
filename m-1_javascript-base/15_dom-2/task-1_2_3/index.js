@@ -8,9 +8,12 @@ const input = form.elements.taskName
 const errSpan = showErrorSpan()
 const tasksList = document.querySelector('.tasks-list')
 
+let THEME = 'light'
+
 
 form.addEventListener('submit', onSubmit)
 tasksList.addEventListener('click', onTaskRemove)
+document.addEventListener("keydown", editTheme)
 render()
 
 function onSubmit(event) {
@@ -118,6 +121,26 @@ function removeTask(event, taskId) {
       tasks = tasks.filter(task => task.id !== taskId)
       render()
       modalOverlayToggle('close')
+    }
+  }
+}
+
+function editTheme(event) {
+  const taskItems = document.querySelectorAll('.task-item')
+  const buttons = document.querySelectorAll('button')
+  console.log(taskItems)
+  if (event.key.toLowerCase() === 'tab') {
+    const body = document.body
+    if (THEME === 'light') {
+      body.style.background = '#24292E'
+      taskItems.forEach(item => item.style.color = '#fff')
+      buttons.forEach((button) => button.style.border = '1px solid #ffffff')
+      THEME = 'dark'
+    } else if (THEME === 'dark') {
+      body.style.background = 'initial'
+      taskItems.forEach(item => item.style.color = 'initial')
+      buttons.forEach((button) => button.style.border = 'none')
+      THEME = 'light'
     }
   }
 }
