@@ -1,0 +1,21 @@
+>>>> Task 1 <<<<
+> Promise
+> End
+> Promise resolve
+> setTimeout
+
+>>>> Task 2 <<<<
+> before promise
+> One
+> Zero
+> Zero Promise
+> Zero Promise Invoked
+
+>>>> Task 3 <<<<
+> End
+> Success
+> User received
+> In promise
+> last set timeout
+> promise resolved
+
