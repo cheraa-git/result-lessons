@@ -7,7 +7,8 @@ function App() {
     <>
       <Switch>
         <Route path="/" exact component={StudentCardPage}/>
-        <Route path="/edit" exact component={EditStudentPage}/>
+        <Route path="/edit" exact render={() => <EditStudentPage mode="edit"/>}/>
+        <Route path="/create" exact render={() => <EditStudentPage mode="create"/>}/>
       </Switch>
     </>
   )
