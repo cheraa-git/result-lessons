@@ -2,24 +2,36 @@ import {TextField} from "../../common/formFields/TextField"
 import {useValidateForm} from "../../../hooks/validateFormHook"
 import {editStudentValidatorConfig} from "../../../utils/validator/validatorConfigs"
 import PropTypes from "prop-types"
-import {NavLink} from "react-router-dom"
+import {NavLink, useHistory} from "react-router-dom"
+import {getStudent, setStudent} from "../../../utils/storageActions"
+import {useEffect} from "react"
 
 export const EditStudentForm = ({mode}) => {
+  const history = useHistory()
   const {fields, setFields, errors, isValid} = useValidateForm(editStudentValidatorConfig, {
     name: '', lastName: '', birth: '', portfolioUrl: ''
   })
+
+  useEffect(() => {
+    if (mode === 'edit') {
+      const student = getStudent()
+      if (!student) return
+      setFields(student)
+    }
+  }, [mode, setFields])
 
   const handleChange = (target) => {
     setFields(prev => ({...prev, [target.name]: target.value}))
   }
 
-  const handleCreate = () => {
-
+  const handleSubmit = () => {
+    if (isValid) {
+      setStudent(fields)
+      alert('Обновлено!')
+      history.push('/')
+    }
   }
 
-  const handleEdit = () => {
-
-  }
 
   return (
     <div>
@@ -55,7 +67,7 @@ export const EditStudentForm = ({mode}) => {
 
       {
         mode === 'create' ?
-          <button className="btn btn-primary" disabled={!isValid} onClick={handleCreate}>
+          <button className="btn btn-primary" disabled={!isValid} onClick={handleSubmit}>
             Создать
           </button>
           :
@@ -65,7 +77,7 @@ export const EditStudentForm = ({mode}) => {
                 Назад
               </button>
             </NavLink>
-            <button className="btn btn-primary" disabled={!isValid} onClick={handleEdit}>
+            <button className="btn btn-primary" disabled={!isValid} onClick={handleSubmit}>
               Обновить
             </button>
           </div>
