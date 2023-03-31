@@ -25,4 +25,12 @@ export const editStudentValidatorConfig = {
       message: 'Полу "Портфолио" должно быть ссылкой'
     }
   },
+  telegram: {
+    required: {
+      message: 'Поле "Ник в телеграм" обязательно для заполнения'
+    },
+    telegramNick: {
+      message: 'Поле "Ник в телеграм" некорректно'
+    }
+  }
 }

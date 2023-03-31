@@ -9,7 +9,7 @@ import {useEffect} from "react"
 export const EditStudentForm = ({mode}) => {
   const history = useHistory()
   const {fields, setFields, errors, isValid} = useValidateForm(editStudentValidatorConfig, {
-    name: '', lastName: '', birth: '', portfolioUrl: ''
+    name: '', lastName: '', birth: '', portfolioUrl: '', telegram: ''
   })
 
   useEffect(() => {
@@ -64,7 +64,13 @@ export const EditStudentForm = ({mode}) => {
         error={errors.portfolioUrl}
         label="Портфолио"
       />
-
+      <TextField
+        name="telegram"
+        onChange={handleChange}
+        value={fields.telegram}
+        error={errors.telegram}
+        label="Ник в телеграм"
+      />
       {
         mode === 'create' ?
           <button className="btn btn-primary" disabled={!isValid} onClick={handleSubmit}>
@@ -83,7 +89,6 @@ export const EditStudentForm = ({mode}) => {
           </div>
       }
     </div>
-
   )
 }
 

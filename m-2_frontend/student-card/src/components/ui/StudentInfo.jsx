@@ -15,13 +15,13 @@ export const StudentInfo = ({student}) => {
     return `(${years} лет)`
   }
 
-
   return (
     <div className="">
       <p><b>Имя:</b> {student.name}</p>
       <p><b>Фамилия:</b> {student.lastName}</p>
       <p><b>Год рождения:</b> {student.birth} {getAge()}</p>
       <p><b>Портфолио:</b> <a href={student.portfolioUrl}>{student.portfolioUrl}</a></p>
+      <p><b>Телеграм:</b> <a href={`https://t.me/${student.telegram.slice(1)}`}>{student.telegram}</a></p>
     </div>
   )
 }
